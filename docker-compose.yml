@@ -11,8 +11,7 @@ services:
       - portainer_data:/data
     environment:
       - VIRTUAL_HOST=${VIRTUAL_HOST}
-      - LETSENCRYPT_HOST=${VIRTUAL_HOST}
-      - LETSENCRYPT_EMAIL=${LETSENCRYPT_EMAIL}
+
 volumes:
   portainer_data:
 
