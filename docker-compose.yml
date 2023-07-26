@@ -5,18 +5,18 @@ services:
     container_name: portainer
     image: portainer/portainer-ce:latest
     restart: always
-    # command: -H unix:///var/run/docker.sock
-    expose:
-      - 9443
+    ports:
+      - 8000:8000
+      - 9443:9443
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - data:/data
+      - portainer_data:/data
     environment:
       - VIRTUAL_HOST
       - VIRTUAL_PORT=9443
 
 volumes:
-  data:
+  portainer_data:
 
 networks:
   default:
